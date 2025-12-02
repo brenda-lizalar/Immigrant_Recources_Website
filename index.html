@@ -3,18 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mexican Immigrant Entrepreneurship: Barriers & Resources</title>
+    <title>Mexican & Central American Immigrant Entrepreneurs</title>
     <style>
       :root {
-        --bg: #f5f5f5;
+        --bg: #f7f7f7;
         --bg-alt: #ffffff;
-        --accent: #047857;
-        --accent-soft: #d1fae5;
+        --accent: #374151; /* neutral dark gray */
+        --accent-soft: #e5e7eb;
         --text: #111827;
         --muted: #4b5563;
-        --border: #e5e7eb;
-        --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
-        --radius-xl: 18px;
+        --border: #d4d4d4;
       }
 
       * {
@@ -30,440 +28,199 @@
       }
 
       a {
-        color: inherit;
-        text-decoration: none;
+        color: #1f2937;
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+      }
+
+      a:hover {
+        text-decoration-thickness: 2px;
       }
 
       header {
-        position: sticky;
-        top: 0;
-        z-index: 20;
-        backdrop-filter: blur(18px);
-        background: rgba(245, 245, 245, 0.9);
-        border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+        border-bottom: 1px solid var(--border);
+        background: var(--bg-alt);
       }
 
       .nav {
-        max-width: 1024px;
+        max-width: 1100px;
         margin: 0 auto;
-        padding: 0.75rem 1.25rem;
+        padding: 0.9rem 1.25rem;
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
-        gap: 1rem;
+        gap: 0.75rem;
       }
 
       .nav-left {
         display: flex;
         flex-direction: column;
-        gap: 0.1rem;
+        gap: 0.15rem;
       }
 
       .nav-title {
-        font-size: 1.1rem;
+        font-size: 1.4rem;
         font-weight: 700;
       }
 
       .nav-subtitle {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         color: var(--muted);
       }
 
       .nav-links {
         display: flex;
-        gap: 0.75rem;
-        font-size: 0.9rem;
         flex-wrap: wrap;
-        justify-content: flex-end;
+        gap: 0.4rem;
       }
 
       .nav-links a {
-        padding: 0.35rem 0.7rem;
+        padding: 0.3rem 0.7rem;
         border-radius: 999px;
         border: 1px solid transparent;
+        font-size: 0.85rem;
+        background: transparent;
+        color: var(--muted);
+        text-decoration: none;
       }
 
       .nav-links a:hover {
-        background: var(--accent-soft);
         border-color: var(--accent);
+        color: var(--accent);
+        background: #f3f4f6;
       }
 
       main {
-        max-width: 1024px;
+        max-width: 1100px;
         margin: 0 auto;
-        padding: 1.5rem 1.25rem 3rem;
+        padding: 2rem 1.25rem 3rem;
       }
 
-      .hero {
-        display: grid;
-        grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-        gap: 2rem;
-        margin-top: 1.5rem;
-        margin-bottom: 2.5rem;
-        align-items: center;
+      /* PAGE LAYOUT */
+
+      .page-heading {
+        font-size: 2.3rem;
+        margin: 0 0 0.5rem;
       }
 
-      .hero-text {
-        background: var(--bg-alt);
-        border-radius: 24px;
-        padding: 1.75rem 1.75rem 1.5rem;
-        box-shadow: var(--shadow-soft);
-        border: 1px solid var(--border);
-      }
-
-      .hero-kicker {
-        font-size: 0.8rem;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--accent);
-        font-weight: 700;
-        margin-bottom: 0.4rem;
-      }
-
-      .hero-title {
-        font-size: clamp(1.6rem, 2.4vw, 2.1rem);
-        line-height: 1.2;
-        margin: 0.1rem 0 0.4rem;
-      }
-
-      .hero-subtitle {
-        font-size: 0.95rem;
+      .page-subtitle {
+        font-size: 1.05rem;
         color: var(--muted);
-        margin-bottom: 1.1rem;
-      }
-
-      .hero-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.35rem;
-        font-size: 0.75rem;
-        margin-bottom: 1.1rem;
-      }
-
-      .tag {
-        padding: 0.25rem 0.65rem;
-        border-radius: 999px;
-        background: #eef2ff;
-        color: #3730a3;
-      }
-
-      .tag.alt {
-        background: #ecfdf5;
-        color: #065f46;
-      }
-
-      .hero-note {
-        font-size: 0.8rem;
-        color: var(--muted);
-        background: #f9fafb;
-        padding: 0.5rem 0.75rem;
-        border-radius: 0.75rem;
-        border: 1px dashed var(--border);
-      }
-
-      .hero-note strong {
-        color: #111827;
-      }
-
-      .hero-visual {
-        position: relative;
-        min-height: 220px;
-      }
-
-      .card-stack {
-        position: relative;
-        width: 100%;
-        height: 100%;
-      }
-
-      .card-base,
-      .card-middle,
-      .card-top {
-        position: absolute;
-        inset: 0;
-        border-radius: 20px;
-      }
-
-      .card-base {
-        background: linear-gradient(135deg, #f9fafb, #e5e7eb);
-        transform: translate(16px, 16px);
-      }
-
-      .card-middle {
-        background: linear-gradient(135deg, #ecfdf5, #d1fae5);
-        transform: translate(8px, 8px);
-      }
-
-      .card-top {
-        background: var(--bg-alt);
-        box-shadow: var(--shadow-soft);
-        border: 1px solid var(--border);
-        padding: 1.2rem 1.3rem;
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-      }
-
-      .card-top h2 {
-        font-size: 0.95rem;
-        margin: 0;
-      }
-
-      .card-row {
-        display: flex;
-        justify-content: space-between;
-        font-size: 0.8rem;
-        color: var(--muted);
-      }
-
-      .pill-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.35rem;
-        font-size: 0.75rem;
-      }
-
-      .pill {
-        background: #f9fafb;
-        border-radius: 999px;
-        padding: 0.2rem 0.55rem;
-        border: 1px solid #e5e7eb;
-      }
-
-      .sections-grid {
-        display: grid;
-        grid-template-columns: minmax(0, 2.5fr) minmax(0, 1.8fr);
-        gap: 2rem;
-        margin-bottom: 2.5rem;
-      }
-
-      section {
-        margin-bottom: 2.25rem;
+        margin: 0 0 1.5rem;
       }
 
       h2.section-title {
-        font-size: 1.3rem;
-        margin-bottom: 0.4rem;
+        font-size: 1.8rem;
+        margin: 2rem 0 0.5rem;
       }
 
-      .section-kicker {
-        font-size: 0.8rem;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: var(--accent);
-        font-weight: 700;
-        margin-bottom: 0.25rem;
+      h3 {
+        font-size: 1.25rem;
+        margin: 1.2rem 0 0.35rem;
       }
 
-      .section-intro {
-        font-size: 0.9rem;
-        color: var(--muted);
-        margin-bottom: 1.1rem;
+      p,
+      li {
+        font-size: 0.98rem;
+        line-height: 1.6;
       }
 
       .two-column {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-        gap: 1rem;
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+        gap: 1.75rem;
+        align-items: flex-start;
       }
 
-      .card {
-        background: var(--bg-alt);
-        border-radius: var(--radius-xl);
-        padding: 1.1rem 1.2rem;
-        border: 1px solid var(--border);
-        box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
+      .image-row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 1.25rem;
+        margin: 1.25rem 0 0.5rem;
       }
 
-      .card h3 {
-        margin-top: 0;
-        margin-bottom: 0.3rem;
-        font-size: 1rem;
+      figure {
+        margin: 0;
       }
 
-      .chip-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.25rem;
-        margin-bottom: 0.35rem;
+      .image-card img {
+        width: 100%;
+        display: block;
+        border-radius: 6px;
       }
 
-      .chip {
-        font-size: 0.7rem;
-        padding: 0.15rem 0.5rem;
-        border-radius: 999px;
-        background: #eff6ff;
-        color: #1d4ed8;
-      }
-
-      .card p {
-        font-size: 0.88rem;
-        margin: 0.25rem 0 0.4rem;
+      .image-caption {
+        font-size: 0.85rem;
         color: var(--muted);
+        margin-top: 0.3rem;
       }
 
-      .card ul {
-        margin: 0.25rem 0 0;
-        padding-left: 1.1rem;
-        font-size: 0.86rem;
+      blockquote {
+        border-left: 3px solid var(--border);
+        padding-left: 0.9rem;
+        margin: 0.6rem 0;
+        font-style: italic;
         color: var(--muted);
+        font-size: 0.95rem;
       }
 
-      .card ul li + li {
-        margin-top: 0.2rem;
-      }
-
-      .label {
-        display: inline-block;
-        font-size: 0.7rem;
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
+      .quote-source {
+        font-size: 0.85rem;
         color: var(--muted);
-        margin-bottom: 0.3rem;
+        margin-bottom: 0.4rem;
       }
 
       .resource-list {
         display: flex;
         flex-direction: column;
-        gap: 0.75rem;
-      }
-
-      .resource {
-        background: var(--bg-alt);
-        border-radius: 14px;
-        padding: 0.85rem 0.9rem;
-        border: 1px solid var(--border);
-      }
-
-      .resource-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        gap: 0.75rem;
+        gap: 0.9rem;
+        margin-top: 0.8rem;
       }
 
       .resource-name {
-        font-size: 0.95rem;
         font-weight: 600;
       }
 
-      .resource-tag {
-        font-size: 0.7rem;
-        padding: 0.1rem 0.55rem;
-        border-radius: 999px;
-        background: var(--accent-soft);
-        color: #047857;
-      }
-
-      .resource-desc {
-        font-size: 0.84rem;
+      .note-small {
+        font-size: 0.85rem;
         color: var(--muted);
-        margin-top: 0.25rem;
-      }
-
-      .resource-meta {
-        margin-top: 0.35rem;
-        font-size: 0.75rem;
-        color: var(--muted);
-      }
-
-      .resource-meta span + span::before {
-        content: "•";
-        margin: 0 0.4rem;
-        color: #d1d5db;
+        margin-top: 0.8rem;
       }
 
       .stories-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 1rem;
-      }
-
-      .story-card {
-        background: var(--bg-alt);
-        border-radius: var(--radius-xl);
-        padding: 1rem 1.1rem;
-        border: 1px solid var(--border);
-        box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
-      }
-
-      .story-name {
-        font-size: 0.95rem;
-        font-weight: 600;
-        margin-bottom: 0.15rem;
-      }
-
-      .story-location {
-        font-size: 0.8rem;
-        color: var(--muted);
-        margin-bottom: 0.35rem;
-      }
-
-      .story-card p {
-        font-size: 0.85rem;
-        color: var(--muted);
-        margin: 0;
-      }
-
-      .course-connection {
-        background: #f9fafb;
-        border-radius: 16px;
-        padding: 1.1rem 1.2rem;
-        border: 1px dashed var(--border);
-        font-size: 0.86rem;
-        color: var(--muted);
-      }
-
-      .course-connection strong {
-        color: #111827;
-      }
-
-      .reading-list {
-        font-size: 0.84rem;
-        color: var(--muted);
-      }
-
-      .reading-list li + li {
-        margin-top: 0.25rem;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.25rem;
+        margin-top: 1rem;
       }
 
       footer {
         border-top: 1px solid var(--border);
         padding: 1rem 1.25rem 1.5rem;
-        font-size: 0.8rem;
+        font-size: 0.85rem;
         color: var(--muted);
         text-align: center;
         background: #f9fafb;
       }
 
-      footer a {
-        text-decoration: underline;
+      /* Simple page router: only one section visible at a time */
+      section[data-page] {
+        display: none;
+      }
+
+      section[data-page].active {
+        display: block;
       }
 
       @media (max-width: 768px) {
-        .hero {
-          grid-template-columns: minmax(0, 1fr);
-        }
-
-        .sections-grid {
-          grid-template-columns: minmax(0, 1fr);
-        }
-
         .two-column {
           grid-template-columns: minmax(0, 1fr);
-        }
-
-        .hero-visual {
-          order: -1;
         }
 
         .nav {
           flex-direction: column;
           align-items: flex-start;
-        }
-
-        .nav-links {
-          justify-content: flex-start;
         }
       }
     </style>
@@ -472,473 +229,949 @@
     <header>
       <nav class="nav">
         <div class="nav-left">
-          <div class="nav-title">Mexican Immigrant Entrepreneurship</div>
-          <div class="nav-subtitle">
-            ETHN Final Project · Barriers, Resources & Success Stories
-          </div>
+          <div class="nav-title">Mexican &amp; Central American Immigrant Entrepreneurs</div>
+          <div class="nav-subtitle">ETHN 120 · Immigration in the U.S. · Made by Brenda Alarcon</div>
         </div>
         <div class="nav-links">
-          <a href="#overview">Overview</a>
-          <a href="#barriers">Barriers</a>
-          <a href="#resources">Resources</a>
-          <a href="#stories">Success Stories</a>
-          <a href="#course">Course Connection</a>
+          <a href="#overview" data-page-link="overview">Overview</a>
+          <a href="#about" data-page-link="about">About / Course</a>
+          <a href="#barriers" data-page-link="barriers">Barriers</a>
+          <a href="#evidence" data-page-link="evidence">Evidence &amp; Quotes</a>
+          <a href="#stats" data-page-link="stats">Key Statistics</a>
+          <a href="#legal" data-page-link="legal">Legal Info</a>
+          <a href="#resources" data-page-link="resources">Resources</a>
+          <a href="#videos" data-page-link="videos">Video Library</a>
+          <a href="#stories" data-page-link="stories">Stories</a>
         </div>
       </nav>
     </header>
 
     <main>
-      <section id="overview" class="hero">
-        <div class="hero-text">
-          <div class="hero-kicker">Project Overview</div>
-          <h1 class="hero-title">
-            Building Businesses, Facing Barriers:
-            <span style="white-space: nowrap">Mexican Immigrant Entrepreneurs</span>
-          </h1>
-          <p class="hero-subtitle">
-            Mexican immigrants make up almost a quarter of the U.S. immigrant
-            population and are deeply involved in small business ownership. This
-            project focuses specifically on <strong>Mexican immigrant
-            entrepreneurs</strong>—not immigration in general—and highlights the
-            legal, financial, cultural, and social barriers they navigate when
-            starting and growing businesses in the United States.
-          </p>
+      <!-- OVERVIEW PAGE -->
+      <section data-page="overview">
+        <h1 class="page-heading">Overview</h1>
+        <p class="page-subtitle">
+          This project focuses on Mexican and Central American immigrants in the United States who start and sustain
+          businesses. Instead of looking only at who is admitted into the country, it centers what happens after migration:
+          how immigrants build businesses, create jobs, and support communities while navigating legal, financial, and
+          social barriers.
+        </p>
 
-          <div class="hero-tags">
-            <span class="tag">Barriers &amp; Inequality</span>
-            <span class="tag alt">Entrepreneurship &amp; Labor</span>
-            <span class="tag">Mexican Immigrants</span>
-            <span class="tag alt">Policy &amp; Resources</span>
+        <div class="two-column">
+          <div>
+            <h2 class="section-title">Why Immigrant Businesses Matter</h2>
+            <p>
+              Immigrants are not just workers or students; many are also <strong>business owners</strong>. Immigrant-owned
+              firms create jobs, provide culturally specific goods and services, and transform local economies. However,
+              the ability to open and grow a business is shaped by immigration policy, access to capital, and racialization.
+            </p>
+            <p>
+              Mexican and Central American immigrants often work in low-wage sectors and face precarious legal status.
+              Entrepreneurship becomes one of the few ways to gain some control over work conditions and income, even
+              when the businesses themselves remain vulnerable.
+            </p>
           </div>
 
-          <p class="hero-note">
-            <strong>Goal of this site:</strong> Turn research on Mexican
-            immigrant entrepreneurship into an accessible, public resource. The
-            content draws from academic work on capital access, legal status,
-            and Latino business ownership and connects it to real-world tools
-            that entrepreneurs can use.
-          </p>
+          <div>
+            <h2 class="section-title">Guiding Questions</h2>
+            <ul>
+              <li>Who is able to start a business among Mexican and Central American immigrants?</li>
+              <li>How do legal status, education, and credit histories shape opportunities to become an entrepreneur?</li>
+              <li>What kinds of businesses do immigrants build, and how do these businesses serve their communities?</li>
+              <li>Which policies and programs help or hurt immigrant entrepreneurs?</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="hero-visual" aria-hidden="true">
-          <div class="card-stack">
-            <div class="card-base"></div>
-            <div class="card-middle"></div>
-            <div class="card-top">
-              <h2>At a Glance</h2>
-              <div class="card-row">
-                <span>Focus group</span>
-                <strong>Mexican Immigrant Entrepreneurs</strong>
-              </div>
-              <div class="card-row">
-                <span>Main themes</span>
-                <span>Legal · Financial · Cultural · Social</span>
-              </div>
-              <div class="card-row">
-                <span>Goal</span>
-                <span>Inform &amp; Support</span>
-              </div>
-              <hr style="border: none; border-top: 1px solid #e5e7eb;" />
-              <div class="pill-row">
-                <span class="pill">Undocumented status &amp; work permits</span>
-                <span class="pill">Access to capital &amp; credit</span>
-                <span class="pill">Language &amp; business norms</span>
-                <span class="pill">Racism &amp; social exclusion</span>
-              </div>
-            </div>
+        <div class="image-row">
+          <figure class="image-card">
+            <img src="images/mercado.jpg" alt="Latino-owned grocery store with fresh produce and customers" />
+            <figcaption class="image-caption">
+              Neighborhood tiendas and mercados are key sites of Mexican and Central American immigrant
+              entrepreneurship.
+            </figcaption>
+          </figure>
+          <figure class="image-card">
+            <img src="images/street-vendor.jpg" alt="Street vendor food stand in a U.S. city" />
+            <figcaption class="image-caption">
+              Street vending and food trucks provide flexible paths into business ownership, especially for undocumented
+              workers.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- ABOUT / COURSE PAGE -->
+      <section data-page="about">
+        <h1 class="page-heading">About the Project &amp; Course</h1>
+        <p class="page-subtitle">
+          This site was created as a final project for <strong>ETHN 120: Immigration in the U.S.</strong>
+          <strong>Made by Brenda Alarcon</strong> at Santa Clara University.
+        </p>
+
+        <h2 class="section-title">From Admissions to Entrepreneurship</h2>
+        <p>
+          My original project proposal focused broadly on immigrant admissions and who is allowed to enter the United
+          States. In feedback, Dr. Sampaio emphasized that this topic was too broad and encouraged a more specific focus
+          that built directly on the literature and the course themes. In response, I narrowed my project to examine
+          <strong>Mexican and Central American immigrant entrepreneurship</strong>.
+        </p>
+        <p>
+          This shift keeps immigration policy at the center but moves the lens to economic life: how immigrants navigate
+          the labor market, legal status, and racialization by opening businesses. It also aligns with course readings on
+          legal liminality, economic incorporation, and the racial construction of “illegality.”
+        </p>
+
+        <h2 class="section-title">How the Site Is Organized</h2>
+        <ul>
+          <li><strong>Overview</strong> explains the focus on immigrant businesses and guiding questions.</li>
+          <li><strong>Barriers</strong> outlines four major structural obstacles to starting and maintaining a business.</li>
+          <li><strong>Evidence &amp; Quotes</strong> provides direct citations from scholarly and policy sources.</li>
+          <li><strong>Key Statistics</strong> visualizes data on immigrant entrepreneurship.</li>
+          <li><strong>Resources</strong> lists organizations that support immigrant entrepreneurs.</li>
+          <li><strong>Success Stories</strong> offers composite narratives based on patterns found in the research.</li>
+        </ul>
+
+        <p class="note-small">
+          Together, these pages show that Mexican and Central American immigrants do not just experience immigration
+          policy; they actively reshape local economies through entrepreneurship, even while facing legal and economic
+          constraints.
+        </p>
+      </section>
+
+      <!-- BARRIERS PAGE -->
+      <section data-page="barriers">
+        <h1 class="page-heading">Barriers to Immigrant Entrepreneurship</h1>
+        <p class="page-subtitle">
+          Research on Mexican and Central American immigrant entrepreneurs identifies four core areas of constraint:
+          <strong>legal status</strong>, <strong>financial capital</strong>, <strong>language and culture</strong>, and
+          <strong>social and racial discrimination</strong>.
+        </p>
+
+        <h2 class="section-title">1. Legal Status &amp; Immigration Policy</h2>
+        <p>
+          Undocumented status limits access to formal employment, credit, contracts, and business licenses. Many
+          immigrants live in a system that accepts their labor but restricts their rights and participation in key
+          institutions. Fear of deportation or audits can discourage entrepreneurs from approaching banks, licensing
+          offices, or government programs that might otherwise support their businesses.
+        </p>
+        <p>
+          Many business programs require Social Security numbers, tax IDs, or legal residency, effectively excluding
+          undocumented entrepreneurs even when they have the skills and motivation to start a business.
+        </p>
+        <blockquote>
+          “Undocumented young adults must negotiate a system that recognizes their labor but denies them full
+          participation.”
+        </blockquote>
+        <div class="quote-source">
+          Roberto G. Gonzales, 2011, p. 608.
+          <a href="https://www.jstor.org/stable/41236156" target="_blank" rel="noopener noreferrer">JSTOR</a>
+        </div>
+
+        <h2 class="section-title">2. Limited Access to Financial Capital</h2>
+        <p>
+          Immigrant-owned firms rely heavily on personal and family savings and are less likely to receive bank loans than
+          native-born firms. Latino and Mexican entrepreneurs face systemic discrimination in lending, even when they have
+          similar credit profiles as white business owners. Nearly half of Mexican immigrants arrive with no credit
+          history, which makes it difficult to qualify for business credit.
+        </p>
+        <blockquote>
+          “Immigrant-owned businesses rely more heavily on personal and family savings and are less likely to receive bank
+          loans.”
+        </blockquote>
+        <div class="quote-source">
+          Robert Fairlie, SBA, 2012.
+          <a href="https://advocacy.sba.gov/wp-content/uploads/2012/05/Immigrant-Entrepreneurs-Financial-Capital-Full-Report.pdf" target="_blank" rel="noopener noreferrer">SBA report</a>
+        </div>
+
+        <h2 class="section-title">3. Language &amp; Cultural Barriers</h2>
+        <p>
+          Many relief programs, grants, and business services operate only in English, which limits who can access them.
+          Business education programs rarely provide Spanish-language or culturally responsive training that matches
+          immigrant realities. Complex contracts, leases, and licensing forms can be difficult to navigate without
+          translation or guidance.
+        </p>
+        <blockquote>
+          “Many immigrants could not access COVID-19 relief programs because materials were only available in English.”
+        </blockquote>
+        <div class="quote-source">
+          American Immigration Council, 2020.
+          <a href="https://www.americanimmigrationcouncil.org/report/covid19-immigrant-entrepreneurs-languages" target="_blank" rel="noopener noreferrer">AIC report</a>
+        </div>
+
+        <h2 class="section-title">4. Social &amp; Racial Discrimination</h2>
+        <p>
+          Mexican and Central American immigrants are often racialized as “illegal,” which affects how landlords,
+          customers, and suppliers treat their businesses. Discrimination shows up in loan approval gaps, landlord
+          skepticism, and policing of public space where street vendors and other small businesses operate.
+        </p>
+        <blockquote>
+          “The figure of the ‘illegal alien’ is an ideological construct that renders Mexican migrants a deportable and
+          subordinate workforce.”
+        </blockquote>
+        <div class="quote-source">
+          Nicholas De Genova, 2004, p. 161.
+          <a href="https://www.jstor.org/stable/3185238" target="_blank" rel="noopener noreferrer">Article</a>
+        </div>
+
+        <div class="image-row">
+          <figure class="image-card">
+            <img src="images/business-meeting.jpg" alt="Latino entrepreneurs in a business workshop" />
+            <figcaption class="image-caption">
+              Community organizations and Small Business Development Centers offer workshops that help immigrants
+              navigate licensing, loans, and business planning.
+            </figcaption>
+          </figure>
+          <figure class="image-card">
+            <img src="images/police-vendors.jpg" alt="Street vendors and police presence in a city" />
+            <figcaption class="image-caption">
+              Street vendors and small businesses may face complaints or over-policing that limit where they can operate.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- EVIDENCE & QUOTES PAGE -->
+      <section data-page="evidence">
+        <h1 class="page-heading">Evidence &amp; Direct Quotes</h1>
+        <p class="page-subtitle">
+          This page collects key quotes from scholarship and policy reports that support the analysis on legal status,
+          capital access, language, and discrimination.
+        </p>
+
+        <h2 class="section-title">Legal Status &amp; Immigration Policy</h2>
+        <blockquote>
+          “Undocumented young adults must negotiate a system that recognizes their labor but denies them full
+          participation.”
+        </blockquote>
+        <div class="quote-source">
+          Roberto G. Gonzales, 2011, p. 608.
+          <a href="https://www.jstor.org/stable/41236156" target="_blank" rel="noopener noreferrer">JSTOR</a>
+        </div>
+
+        <blockquote>
+          “Undocumented immigrants have significantly lower wages and lower returns to education than documented
+          immigrants.”
+        </blockquote>
+        <div class="quote-source">
+          Hall, Greenman &amp; Farkas, 2010.
+          <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4235135/" target="_blank" rel="noopener noreferrer">Article</a>
+        </div>
+
+        <blockquote>
+          “Legal structures and their implementation generate vulnerability and punitive consequences for immigrants.”
+        </blockquote>
+        <div class="quote-source">
+          Cecilia Menjívar, 2006, p. 1000.
+          <a href="https://www.jstor.org/stable/4149494" target="_blank" rel="noopener noreferrer">JSTOR</a>
+        </div>
+
+        <h2 class="section-title">Financial Capital</h2>
+        <blockquote>
+          “Immigrant-owned businesses rely more heavily on personal and family savings and are less likely to receive bank
+          loans.”
+        </blockquote>
+        <div class="quote-source">
+          Fairlie, SBA, 2012.
+          <a href="https://advocacy.sba.gov/wp-content/uploads/2012/05/Immigrant-Entrepreneurs-Financial-Capital-Full-Report.pdf" target="_blank" rel="noopener noreferrer">SBA report</a>
+        </div>
+
+        <blockquote>
+          “Minority-owned firms face higher loan denial rates and receive smaller loans even with identical
+          creditworthiness.”
+        </blockquote>
+        <div class="quote-source">
+          Fairlie &amp; Robb, 2008.
+          <a href="https://www.mbda.gov/sites/default/files/migrated/files-attachments/DisparitiesinCapitalAccessReport.pdf" target="_blank" rel="noopener noreferrer">MBDA study</a>
+        </div>
+
+        <blockquote>
+          “Nearly half of Mexican immigrants report having no credit history upon arrival in the United States.”
+        </blockquote>
+        <div class="quote-source">
+          Migration Policy Institute, 2024.
+          <a href="https://www.migrationpolicy.org/article/mexican-immigrants-united-states" target="_blank" rel="noopener noreferrer">MPI profile</a>
+        </div>
+
+        <h2 class="section-title">Language &amp; Culture</h2>
+        <blockquote>
+          “Many immigrants could not access COVID-19 relief programs because materials were only available in English.”
+        </blockquote>
+        <div class="quote-source">
+          American Immigration Council, 2020.
+          <a href="https://www.americanimmigrationcouncil.org/report/covid19-immigrant-entrepreneurs-languages" target="_blank" rel="noopener noreferrer">AIC report</a>
+        </div>
+
+        <blockquote>
+          “First-generation Latino entrepreneurs often lack access to culturally aligned business support and education.”
+        </blockquote>
+        <div class="quote-source">
+          Immigrants Rising, 2025.
+          <a href="https://immigrantsrising.org/wp-content/uploads/Immigrants-Rising_Navigating-Entrepreneurship-Research-Report_2025.pdf" target="_blank" rel="noopener noreferrer">Immigrants Rising report</a>
+        </div>
+
+        <h2 class="section-title">Social &amp; Racial Discrimination</h2>
+        <blockquote>
+          “The figure of the ‘illegal alien’ is an ideological construct that renders Mexican migrants a deportable and
+          subordinate workforce.”
+        </blockquote>
+        <div class="quote-source">
+          Nicholas De Genova, 2004, p. 161.
+          <a href="https://www.jstor.org/stable/3185238" target="_blank" rel="noopener noreferrer">JSTOR</a>
+        </div>
+
+        <blockquote>
+          “Latino business owners continue to face significant gaps in loan approval and loan size.”
+        </blockquote>
+        <div class="quote-source">
+          Small Business Administration, 2024.
+          <a href="https://advocacy.sba.gov/2024/01/03/hispanic-business-owners-facts/" target="_blank" rel="noopener noreferrer">SBA facts</a>
+        </div>
+
+        <blockquote>
+          “Latino immigrant businesses frequently encounter discrimination from customers, landlords, and service
+          providers, limiting growth opportunities.”
+        </blockquote>
+        <div class="quote-source">
+          Rutgers SMLR Review.
+          <a href="https://smlr.rutgers.edu/sites/default/files/Documents/Centers/WJL/MN_SBChallenges.pdf" target="_blank" rel="noopener noreferrer">Rutgers review</a>
+        </div>
+      </section>
+
+      <!-- STATS PAGE -->
+      <section data-page="stats">
+        <h1 class="page-heading">Key Statistics</h1>
+        <p class="page-subtitle">
+          Visual data showing the scale, innovation, and sector concentration of immigrant-owned businesses.
+        </p>
+
+        <div class="image-row">
+          <figure class="image-card">
+            <img src="images/latino business growth.png" alt="Immigrant and native business formation chart" />
+            <figcaption class="image-caption">
+              Immigrants are more likely than natives to start new businesses. Source: America's Voice, summarizing
+              research on immigrant entrepreneurship.
+            </figcaption>
+          </figure>
+          <figure class="image-card">
+            <img src="images/Innovation of Immigrant.png" alt="Innovation of immigrant-led firms" />
+            <figcaption class="image-caption">
+              Immigrant-led new firms are more likely to produce new technology, hold patents, and bring innovations to
+              market. Source: Annual Business Survey, via research on immigrant innovation.
+            </figcaption>
+          </figure>
+          <figure class="image-card">
+            <img src="images/Share of main street business owners.png" alt="Main Street immigrant business ownership" />
+            <figcaption class="image-caption">
+              Immigrants own a high share of "Main Street" businesses such as gas stations, grocery stores, and
+              restaurants. Source: ForumTogether analysis of immigrant entrepreneurs.
+            </figcaption>
+          </figure>
+          <figure class="image-card">
+            <img src="images/latino business outlook.png" alt="Latino business outlook statistics" />
+            <figcaption class="image-caption">
+              Outlook and trends for Latino-owned businesses in the United States.
+            </figcaption>
+          </figure>
+          <figure class="image-card">
+            <img src="images/latino population us.png" alt="Latino population in the United States" />
+            <figcaption class="image-caption">
+              Latino population demographics and growth in the United States.
+            </figcaption>
+          </figure>
+          <figure class="image-card">
+            <img src="images/loan approval.png" alt="Loan approval rates for immigrant businesses" />
+            <figcaption class="image-caption">
+              Loan approval rates and access to capital for immigrant and Latino entrepreneurs.
+            </figcaption>
+          </figure>
+          <figure class="image-card">
+            <img src="images/average contract.png" alt="Average contract values for immigrant businesses" />
+            <figcaption class="image-caption">
+              Average contract values and business opportunities for immigrant-owned firms.
+            </figcaption>
+          </figure>
+          <figure class="image-card">
+            <img src="images/education.png" alt="Education levels of immigrant entrepreneurs" />
+            <figcaption class="image-caption">
+              Education levels and educational attainment among immigrant entrepreneurs.
+            </figcaption>
+          </figure>
+        </div>
+
+        <h2 class="section-title">Key Statistics</h2>
+        
+        <div class="resource-list">
+          <div>
+            <div class="resource-name">Immigrants Start Businesses at Much Higher Rates</div>
+            <p>
+              Immigrants are <strong>80% more likely</strong> than U.S.-born citizens to start a business.
+              <a href="https://news.mit.edu/2022/study-immigrants-more-likely-start-firms-create-jobs-0509" target="_blank" rel="noopener noreferrer">Source: MIT, 2022</a>
+            </p>
+          </div>
+
+          <div>
+            <div class="resource-name">Mexican Immigrant Population</div>
+            <p>
+              <strong>10.9 million</strong> Mexican immigrants lived in the U.S. in 2023.
+              <a href="https://www.migrationpolicy.org/article/mexican-immigrants-united-states" target="_blank" rel="noopener noreferrer">Source: Migration Policy Institute</a>
+            </p>
+          </div>
+
+          <div>
+            <div class="resource-name">Mexican Immigrants & Education</div>
+            <p>
+              <strong>50%</strong> of Mexican immigrants lack a high school diploma and only <strong>9%</strong> have a bachelor's degree, which affects access to capital and training.
+              <a href="https://www.migrationpolicy.org/article/mexican-immigrants-united-states" target="_blank" rel="noopener noreferrer">Source: Migration Policy Institute</a>
+            </p>
+          </div>
+
+          <div>
+            <div class="resource-name">Immigrant Business Contribution</div>
+            <p>
+              Immigrant entrepreneurs account for <strong>24% of all businesses</strong> in the U.S.
+              <a href="https://www.americanimmigrationcouncil.org/research/immigrant-entrepreneurs" target="_blank" rel="noopener noreferrer">Source: American Immigration Council</a>
+            </p>
+          </div>
+
+          <div>
+            <div class="resource-name">Latino-Owned Businesses Growth</div>
+            <p>
+              Latino-owned businesses have grown at <strong>three times the national average</strong>, yet they receive the smallest share of all SBA/PPP loans.
+              <a href="https://www.gsb.stanford.edu/insights/latino-entrepreneurs-are-thriving-access-contracts-capital-remains-challenging" target="_blank" rel="noopener noreferrer">Source: Stanford Latino Entrepreneurship Initiative, 2023</a>
+            </p>
+          </div>
+
+          <div>
+            <div class="resource-name">Latino Business Employment & Growth</div>
+            <p>
+              More than <strong>3 million people</strong> are employed by nearly <strong>350,000 Latino-owned businesses</strong>. From 2007 to 2019, the number of Latino-owned businesses grew by <strong>34%</strong> while the number of White-owned businesses fell by 7%.
+              <a href="https://www.gsb.stanford.edu/insights/decade-data-shows-latino-entrepreneurs-growing-adapting" target="_blank" rel="noopener noreferrer">Source: Stanford Graduate School of Business</a>
+            </p>
+          </div>
+
+          <div>
+            <div class="resource-name">Post-Pandemic Recovery</div>
+            <p>
+              Between 2019 and 2022, Latino-owned businesses reported median growth of <strong>25%</strong>, compared with 9% for White-owned businesses.
+              <a href="https://home.treasury.gov/news/press-releases/jy1798" target="_blank" rel="noopener noreferrer">Source: Stanford Latino Entrepreneurship Initiative</a>
+            </p>
+          </div>
+
+          <div>
+            <div class="resource-name">Credit History Barrier</div>
+            <p>
+              <strong>49% of Mexican immigrants</strong> have no credit history upon arrival in the United States, limiting access to capital.
+              <a href="https://www.migrationpolicy.org/article/mexican-immigrants-united-states" target="_blank" rel="noopener noreferrer">Source: Migration Policy Institute</a>
+            </p>
+          </div>
+        </div>
+
+        <p class="note-small">
+          To make sure these images appear, save your graph files inside an <code>images</code> folder next to this HTML
+          file with the same file names, or update the <code>src</code> paths to match where you store the images.
+        </p>
+      </section>
+
+      <!-- RESOURCES PAGE -->
+      <section data-page="resources">
+        <h1 class="page-heading">Resources for Immigrant Entrepreneurs</h1>
+        <p class="page-subtitle">
+          Organizations and programs that provide funding, legal support, mentorship, and training for immigrant
+          entrepreneurs.
+        </p>
+
+        <h2 class="section-title">Funding &amp; Business Support</h2>
+        <div class="resource-list">
+          <div>
+            <div class="resource-name">Immigrants Rising – Entrepreneurship Support</div>
+            <p>
+              Grants, training, legal FAQs, and guidance specifically for undocumented and immigrant entrepreneurs.
+              <a href="https://immigrantsrising.org/resource/entrepreneurship/" target="_blank" rel="noopener noreferrer">Visit Immigrants Rising</a>
+            </p>
+          </div>
+
+          <div>
+            <div class="resource-name">U.S. Small Business Administration (SBA) – Funding Programs</div>
+            <p>
+              Microloans, regular loans, and technical assistance for small businesses, including immigrant-owned firms.
+              <a href="https://www.sba.gov/funding-programs" target="_blank" rel="noopener noreferrer">SBA funding programs</a>
+            </p>
+          </div>
+
+          <div>
+            <div class="resource-name">Latino Business Action Network (LBAN)</div>
+            <p>
+              Stanford-affiliated initiative that offers education and research for Latino founders.
+              <a href="https://lban.us/" target="_blank" rel="noopener noreferrer">Visit LBAN</a>
+            </p>
+          </div>
+
+          <div>
+            <div class="resource-name">Small Business Development Centers (SBDCs)</div>
+            <p>
+              Free one-on-one advising and workshops, often with Spanish-language support.
+              <a href="https://americassbdc.org/" target="_blank" rel="noopener noreferrer">Find your local SBDC</a>
+            </p>
+          </div>
+
+          <div>
+            <div class="resource-name">SCORE – Free Business Mentors</div>
+            <p>
+              National network of volunteer mentors who support new and growing businesses.
+              <a href="https://www.score.org/" target="_blank" rel="noopener noreferrer">Connect with a mentor</a>
+            </p>
+          </div>
+        </div>
+
+        <h2 class="section-title">Legal Status &amp; Scholarships</h2>
+        <div class="resource-list">
+          <div>
+            <div class="resource-name">Dreamer’s Roadmap</div>
+            <p>
+              Helps immigrants, including undocumented students, locate scholarships and educational resources.
+              <a href="https://dreamersroadmap.org/" target="_blank" rel="noopener noreferrer">Dreamer’s Roadmap</a>
+            </p>
+          </div>
+
+          <div>
+            <div class="resource-name">National Immigrant Justice Center (NIJC)</div>
+            <p>
+              Legal support for immigration relief, work permits, and documentation.
+              <a href="https://immigrantjustice.org/" target="_blank" rel="noopener noreferrer">Visit NIJC</a>
+            </p>
+          </div>
+
+          <div>
+            <div class="resource-name">Mexican Consulates – IME Programs</div>
+            <p>
+              Mexican consulates offer financial education, business workshops, and entrepreneurship training through IME
+              (Instituto de los Mexicanos en el Exterior).
+              <a href="https://consulmex.sre.gob.mx" target="_blank" rel="noopener noreferrer">Locate a consulate</a>
+            </p>
           </div>
         </div>
       </section>
 
-      <div class="sections-grid">
-        <!-- BARRIERS COLUMN -->
-        <section id="barriers">
-          <div class="section-kicker">Section One</div>
-          <h2 class="section-title">Barriers to Starting & Growing a Business</h2>
-          <p class="section-intro">
-            Research on Mexican immigrant entrepreneurship shows that many
-            entrepreneurs have strong skills, networks, and work ethic, but face
-            structural barriers that limit what they can do with those assets.
-            Below are four key types of barriers, with examples of how they
-            show up in everyday business life.
-          </p>
-
-          <div class="two-column">
-            <article class="card">
-              <h3>1. Legal &amp; Immigration Status</h3>
-              <div class="chip-row">
-                <span class="chip">Work authorization</span>
-                <span class="chip">Licensing</span>
-                <span class="chip">Fear of enforcement</span>
-              </div>
-              <p>
-                Legal status shapes nearly every part of the business journey.
-                Undocumented and mixed-status Mexican families may be blocked
-                from professional licenses, formal employment, or federal loan
-                programs.
-              </p>
-              <ul>
-                <li>
-                  Limited access to <strong>EINs, permits, and licenses</strong>
-                  can push businesses into the informal economy.
-                </li>
-                <li>
-                  Fear of deportation or audits can discourage entrepreneurs
-                  from seeking advice or visibility.
-                </li>
-                <li>
-                  Complex paperwork and changing policies create a constant
-                  climate of uncertainty.
-                </li>
-              </ul>
-            </article>
-
-            <article class="card">
-              <h3>2. Financial &amp; Capital Barriers</h3>
-              <div class="chip-row">
-                <span class="chip">Credit history</span>
-                <span class="chip">Collateral</span>
-                <span class="chip">Discrimination</span>
-              </div>
-              <p>
-                Studies on Latino business ownership show that Mexican
-                immigrant entrepreneurs often start with
-                <strong>less startup capital</strong> than U.S.-born business
-                owners and rely heavily on family savings.
-              </p>
-              <ul>
-                <li>
-                  Banks may deny loans due to thin or no credit history,
-                  informal income, or immigration status.
-                </li>
-                <li>
-                  Without collateral, entrepreneurs turn to high-interest credit
-                  or predatory lenders.
-                </li>
-                <li>
-                  Even when eligible, discrimination in financial services can
-                  lead to smaller loans or worse terms.
-                </li>
-              </ul>
-            </article>
-
-            <article class="card">
-              <h3>3. Cultural &amp; Language Barriers</h3>
-              <div class="chip-row">
-                <span class="chip">Business English</span>
-                <span class="chip">U.S. bureaucracy</span>
-                <span class="chip">Translating experience</span>
-              </div>
-              <p>
-                Many Mexican immigrants bring rich entrepreneurial experience
-                from markets, food stands, and trades in Mexico, but U.S.
-                systems often only recognize formal credentials.
-              </p>
-              <ul>
-                <li>
-                  Contracts, leases, and loan applications are rarely available
-                  in plain Spanish.
-                </li>
-                <li>
-                  U.S. tax rules, zoning laws, and health codes can be confusing
-                  without culturally responsive guidance.
-                </li>
-                <li>
-                  Business workshops may not reflect the realities of migrant
-                  families working multiple jobs.
-                </li>
-              </ul>
-            </article>
-
-            <article class="card">
-              <h3>4. Social Barriers &amp; Discrimination</h3>
-              <div class="chip-row">
-                <span class="chip">Racism</span>
-                <span class="chip">Neighborhood politics</span>
-                <span class="chip">Policing of space</span>
-              </div>
-              <p>
-                Discrimination doesn&apos;t only show up in laws—it also shapes who
-                feels welcome to open a store on the "main street" and whose
-                businesses are treated as temporary or less legitimate.
-              </p>
-              <ul>
-                <li>
-                  Negative stereotypes about Mexican workers can impact customer
-                  trust and landlord decisions.
-                </li>
-                <li>
-                  Street vendors and food trucks may face over-policing or
-                  complaints that push them out of profitable areas.
-                </li>
-                <li>
-                  Local politics can favor certain types of businesses while
-                  restricting immigrant-owned ones.
-                </li>
-              </ul>
-            </article>
-          </div>
-        </section>
-
-        <!-- RESOURCES COLUMN -->
-        <section id="resources">
-          <div class="section-kicker">Section Two</div>
-          <h2 class="section-title">Resources for Mexican Immigrant Entrepreneurs</h2>
-          <p class="section-intro">
-            These resources focus on <strong>business support</strong> for
-            Mexican and Latino entrepreneurs in the U.S., including legal aid,
-            capital access, and culturally responsive mentorship. Links are
-            examples and can be customized to local regions (Bay Area, SoCal,
-            etc.).
-          </p>
-
-          <div class="label">Financial &amp; Business Support</div>
-          <div class="resource-list">
-            <article class="resource">
-              <div class="resource-header">
-                <div class="resource-name">U.S. Small Business Administration (SBA)</div>
-                <span class="resource-tag">National</span>
-              </div>
-              <p class="resource-desc">
-                Offers microloans, counseling, and training programs for small
-                businesses, including immigrant-owned firms. Some partners
-                specialize in Spanish-language support.
-              </p>
-              <div class="resource-meta">
-                <span>Focus: Loans &amp; counseling</span>
-                <span>Languages: English &amp; Spanish via partners</span>
-              </div>
-            </article>
-
-            <article class="resource">
-              <div class="resource-header">
-                <div class="resource-name">
-                  Minority Business Development Agency (MBDA) Centers
-                </div>
-                <span class="resource-tag">National</span>
-              </div>
-              <p class="resource-desc">
-                MBDA centers work with Latino and immigrant-owned businesses to
-                improve access to capital, contracts, and markets.
-              </p>
-              <div class="resource-meta">
-                <span>Focus: Growth &amp; capital access</span>
-                <span>Great for: Scaling existing businesses</span>
-              </div>
-            </article>
-
-            <article class="resource">
-              <div class="resource-header">
-                <div class="resource-name">Latino Business Action Network (LBAN)</div>
-                <span class="resource-tag">Latino-focused</span>
-              </div>
-              <p class="resource-desc">
-                Connects Latino entrepreneurs with education, mentorship, and
-                research-based insights on scaling businesses.
-              </p>
-              <div class="resource-meta">
-                <span>Focus: Education &amp; networks</span>
-                <span>Great for: High-growth ventures</span>
-              </div>
-            </article>
-          </div>
-
-          <div class="label" style="margin-top: 1.1rem;">
-            Legal Status &amp; Workers&apos; Rights
-          </div>
-          <div class="resource-list">
-            <article class="resource">
-              <div class="resource-header">
-                <div class="resource-name">Local Immigrant Rights &amp; Legal Aid Orgs</div>
-                <span class="resource-tag">Regional</span>
-              </div>
-              <p class="resource-desc">
-                Many cities have nonprofits that offer low-cost or free legal
-                consultations about status, work authorization, and small
-                business issues.
-              </p>
-              <div class="resource-meta">
-                <span>Tip: Search for "immigrant legal services" in your city</span>
-                <span>Ask about: Business licensing &amp; permits</span>
-              </div>
-            </article>
-
-            <article class="resource">
-              <div class="resource-header">
-                <div class="resource-name">Worker &amp; Vendor Centers</div>
-                <span class="resource-tag">Local</span>
-              </div>
-              <p class="resource-desc">
-                Worker centers and street vendor coalitions often help Mexican
-                entrepreneurs understand local laws, avoid fines, and organize
-                for better policies.
-              </p>
-              <div class="resource-meta">
-                <span>Focus: Street vendors &amp; informal businesses</span>
-                <span>Languages: Often Spanish-first spaces</span>
-              </div>
-            </article>
-          </div>
-
-          <div class="label" style="margin-top: 1.1rem;">
-            Community, Mentorship &amp; Skills
-          </div>
-          <div class="resource-list">
-            <article class="resource">
-              <div class="resource-header">
-                <div class="resource-name">Latino Chambers of Commerce</div>
-                <span class="resource-tag">Local/Regional</span>
-              </div>
-              <p class="resource-desc">
-                Provide networking events, workshops, and advocacy specifically
-                for Latino-owned businesses, including Mexican immigrant
-                entrepreneurs.
-              </p>
-              <div class="resource-meta">
-                <span>Focus: Networking &amp; visibility</span>
-                <span>Good first step for new owners</span>
-              </div>
-            </article>
-
-            <article class="resource">
-              <div class="resource-header">
-                <div class="resource-name">Community Colleges &amp; Adult Schools</div>
-                <span class="resource-tag">Education</span>
-              </div>
-              <p class="resource-desc">
-                Many offer small business classes, ESL for business, and
-                certificate programs that are low-cost and open to immigrant
-                students.
-              </p>
-              <div class="resource-meta">
-                <span>Focus: Business skills &amp; language</span>
-                <span>Access: Often evening/weekend classes</span>
-              </div>
-            </article>
-          </div>
-        </section>
-      </div>
-
-      <!-- SUCCESS STORIES -->
-      <section id="stories">
-        <div class="section-kicker">Section Three</div>
-        <h2 class="section-title">Success Stories: Entrepreneurs in Context</h2>
-        <p class="section-intro">
-          These short case examples show how Mexican immigrant entrepreneurs use
-          creativity, family networks, and community support to overcome some of
-          the barriers described above. They are based on patterns discussed in
-          scholarship and community reports, not on a single individual.
+      <!-- STORIES PAGE -->
+      <section data-page="stories">
+        <h1 class="page-heading">Stories of Struggle & Resilience</h1>
+        <p class="page-subtitle">
+          These stories blend real documented patterns with composite narratives from Mexican and Central American
+          immigrant entrepreneurs in the Bay Area. They include successes, stalled dreams, financial setbacks, and
+          everyday struggles in food stands, retail shops, gas stations, and construction.
         </p>
 
         <div class="stories-grid">
-          <article class="story-card">
-            <div class="story-name">"María" – Taco Truck Owner</div>
-            <div class="story-location">Central Valley, California</div>
+          <article>
+            <h3>“María” – Taco Truck Owner, San Jose</h3>
             <p>
-              After migrating from Michoacán, María started selling tacos from a
-              small stand with her cousins. At first she operated informally due
-              to lack of permits and fear of enforcement. With the help of a
-              local worker center and Spanish-language workshops, she obtained a
-              food vendor license, a tax ID, and eventually a small business
-              loan. Her truck now employs three workers from her community and
-              advocates for fair street vending policies.
+              María migrated from Michoacán and spent her first years selling tacos outside a laundromat without permits.
+              Police citations, fear of immigration enforcement, and English-only permit forms stalled her progress for
+              years. A Bay Area worker center eventually connected her to Spanish-language licensing workshops.
+              After three failed loan applications because she lacked credit history, she finally secured a microloan
+              through a community lender. Her truck now provides jobs to two relatives, but she still faces harassment
+              from inspectors and unpredictable street vending rules.
             </p>
           </article>
 
-          <article class="story-card">
-            <div class="story-name">"Luis" – Construction &amp; Remodeling</div>
-            <div class="story-location">Dallas–Fort Worth Metro Area</div>
+          <article>
+            <h3>“Don Rafa” – Fruit Stand Vendor, Oakland</h3>
             <p>
-              Luis learned construction skills in Mexico and worked for years as
-              a day laborer in Texas. Because he lacked credit history, banks
-              initially denied him a business loan. By working with a
-              community-based lender and building credit through a secured card,
-              he was able to purchase tools and a work truck. Today he owns a
-              small remodeling company that contracts with Latino homeowners and
-              mentors younger workers just arriving from Mexico.
+              A street vendor near East Oakland’s Lake Merritt, Don Rafa sells mango, pepino, and watermelon—often facing
+              police sweeps targeting food vendors. He once lost an entire cart during a confiscation and had to rebuild
+              from scratch using borrowed money. His undocumented status prevents him from accessing small business
+              grants or unemployment during slow seasons. Despite this, he stays because his customers include
+              low-income families and unhoused residents who rely on his affordable produce.
             </p>
           </article>
 
-          <article class="story-card">
-            <div class="story-name">"Ana &amp; Jorge" – Family Grocery Store</div>
-            <div class="story-location">Chicago, Illinois</div>
+          <article>
+            <h3>“Yessenia & Marco” – Gas Station Franchise Owners, Redwood City</h3>
             <p>
-              Ana and Jorge opened a neighborhood tienda that sells Mexican
-              pantry staples and prepared foods. They faced rising commercial
-              rents and skepticism from landlords. Joining a Latino Chamber of
-              Commerce helped them negotiate a lease, understand city
-              inspections, and apply for a small façade improvement grant. Their
-              store now functions as a cultural hub where new immigrants find
-              products, information, and community.
+              After years working minimum-wage jobs, the couple bought a small independent gas station. During the first
+              year, a predatory contract locked them into overpriced fuel deliveries, causing major financial strain.
+              English-language legal documents were difficult to understand, and hiring a lawyer was too expensive.
+              Community business counselors eventually helped them renegotiate terms. Their station now hires four
+              workers, but fluctuating fuel prices and rising commercial rent keep their margins slim.
             </p>
           </article>
+
+          <article>
+            <h3>“Ana & Jorge” – Family Grocery Store, San Mateo</h3>
+            <p>
+              Facing rising commercial rents and landlord skepticism, Ana and Jorge struggled to secure a lease for their
+              tienda. A Latino Chamber of Commerce guided them through inspections and helped them apply for a local
+              improvement grant. Their store now serves newly arrived immigrants who depend on culturally specific
+              foods—and functions as an informal information hub about housing, legal clinics, and jobs.
+            </p>
+          </article>
+
+          <article>
+            <h3>“Oscar” – Construction Worker Turned Contractor, Hayward</h3>
+            <p>
+              Oscar specialized in residential remodeling but struggled for years to transition from day labor to licensed
+              contractor. His undocumented status prevented him from obtaining a contractor’s license until California
+              changed eligibility rules. Even after becoming licensed, banks rejected his loan applications due to a thin
+              credit file. He built credit slowly through secured cards and community lenders and now runs a two-person
+              remodeling team focusing on ADU construction.
+            </p>
+          </article>
+
+          <article>
+            <h3>César Chávez & Dolores Huerta – Historical Figures</h3>
+            <p>
+              Both came from families of Mexican migrant laborers and rose to organize the United Farm Workers. Their
+              barriers included poverty, discrimination, and violent retaliation for labor organizing. Their legacy shows
+              how Mexican immigrant communities have long confronted exploitation while building economic and political
+              power.
+            </p>
+          </article>
+
+          <article>
+            <h3>Lupe Hernández – Latina Inventor (Widely Discussed Origin Story)</h3>
+            <p>
+              Although debated, the widely shared story credits Mexican-American nurse Lupe Hernández with inventing hand
+              sanitizer in 1966 when she realized alcohol could be suspended in gel. The story became famous during COVID-19
+              as an example of how immigrant-rooted innovation is often overlooked or uncredited.
+            </p>
+          </article>
+
+        </div>
+
+        <div class="image-row">
+          <figure class="image-card">
+            <img src="images/taco-truck-night.jpg" alt="Taco truck serving customers at night" />
+            <figcaption class="image-caption">
+              Street food vendors—especially Mexican and Central American entrepreneurs—face unique challenges navigating
+              licensing, police presence, and unpredictable income.
+            </figcaption>
+          </figure>
         </div>
       </section>
 
-      <!-- COURSE CONNECTION & RESEARCH -->
-      <section id="course">
-        <div class="section-kicker">Section Four</div>
-        <h2 class="section-title">How This Project Connects to Course Readings</h2>
+      <!-- LEGAL INFO PAGE -->
+      <section data-page="legal">
+        <h1 class="page-heading">Legal Information for Immigrant Entrepreneurs</h1>
+        <p class="page-subtitle">
+          This section summarizes key U.S. laws and policies that shape what immigrant entrepreneurs can and cannot do.
+          It is designed for Mexican, Central American, and other immigrant founders navigating business formation,
+          immigration status, and financial systems.
+        </p>
 
-        <div class="course-connection">
-          <p>
-            <strong>Why entrepreneurship?</strong> Instead of focusing broadly on
-            who is allowed into the U.S., this project centers on what happens
-            <em>after</em> arrival—specifically, on Mexican immigrants who build
-            businesses and participate in the U.S. economy. This shift responds
-            to feedback that immigrant admissions alone is too broad and not
-            grounded in course materials.
-          </p>
-          <p>
-            <strong>How readings shaped the site:</strong> Scholarship on Mexican
-            and Latino business ownership highlights persistent gaps in access
-            to capital, the impact of legal status, and the importance of
-            community networks. These findings directly informed the four
-            barrier categories and the resource lists on this website.
-          </p>
-          <p>
-            <strong>Course themes:</strong> The project connects to larger ETHN
-            themes of racialization, labor, and resistance by showing how
-            Mexican immigrant entrepreneurs both experience structural
-            inequality and actively create alternative economic spaces—through
-            taco trucks, mercados, family stores, and service businesses.
-          </p>
-        </div>
+        <h2 class="section-title">1. Business Formation Laws</h2>
+        <p>
+          In most states, you <strong>do not need U.S. citizenship or a green card</strong> to register a business. People
+          with ITINs (Individual Taxpayer Identification Numbers) can form LLCs, corporations, and sole proprietorships,
+          as long as they file taxes correctly.
+        </p>
+        <p>
+          Many undocumented, DACA, and visa-holding immigrants wrongly believe they are not allowed to own businesses.
+          Legally, the issue is not citizenship but tax compliance and state-specific licensing rules.
+        </p>
+        <p>
+          <strong>Key link:</strong>
+          <a href="https://www.irs.gov/individuals/how-do-i-apply-for-an-itin" target="_blank" rel="noopener noreferrer">IRS – Applying for an ITIN</a>
+        </p>
 
-        <section style="margin-top: 1.25rem;">
-          <div class="label">Selected Research &amp; Data Informing this Site</div>
-          <ul class="reading-list">
-            <li>
-              Reports on Mexican immigrants in the U.S. that document their
-              population size, labor market participation, and role in small
-              business ownership.
-            </li>
-            <li>
-              Studies on Latino business ownership and capital access, which
-              show that immigrant Latinos often start with less wealth and face
-              harder paths to loans compared to non-Latino owners.
-            </li>
-            <li>
-              Research on undocumented entrepreneurs, street vending, and
-              informal economies, which illustrates how legal status and local
-              ordinances shape business strategies.
-            </li>
-            <li>
-              Ethnographic work on Mexican food trucks and markets, emphasizing
-              how businesses double as cultural and political spaces in U.S.
-              cities.
-            </li>
-          </ul>
-        </section>
+        <h2 class="section-title">2. ITINs &amp; EINs</h2>
+        <p>
+          Immigrant entrepreneurs without Social Security numbers can use an <strong>ITIN</strong> to:
+        </p>
+        <ul>
+          <li>Pay business taxes</li>
+          <li>Open some business bank accounts</li>
+          <li>Apply for local business licenses</li>
+          <li>Legally form an LLC</li>
+        </ul>
+        <p>
+          An <strong>EIN</strong> (Employer Identification Number) is like a Social Security number for your business. You
+          can apply for an EIN with an ITIN, and you may need it to hire employees, open a business bank account, or file
+          certain tax forms.
+        </p>
+        <p>
+          <strong>Key links:</strong>
+          <a href="https://www.irs.gov/individuals/individual-taxpayer-identification-number" target="_blank" rel="noopener noreferrer">IRS – ITIN overview</a>
+          &middot;
+          <a href="https://www.irs.gov/businesses/small-businesses-self-employed/employer-id-numbers" target="_blank" rel="noopener noreferrer">IRS – Employer Identification Numbers (EIN)</a>
+        </p>
+
+        <h2 class="section-title">3. Immigration Pathways Connected to Entrepreneurship</h2>
+        <p>
+          A few U.S. immigration options are specifically connected to entrepreneurship or investment. They are limited
+          and usually require capital, proof of innovation, or existing businesses. These programs typically apply to
+          founders, not regular workers.
+        </p>
+        <ul>
+          <li>
+            <strong>International Entrepreneur Rule (IER)</strong> – Sometimes called "startup parole." Allows certain
+            founders to stay in the U.S. temporarily if their startup has high growth potential and significant
+            investment or public benefit.
+            <br />
+            <a href="https://www.uscis.gov/humanitarian/humanitarian-parole/international-entrepreneur-parole" target="_blank" rel="noopener noreferrer">USCIS – International Entrepreneur Parole</a>
+          </li>
+          <li>
+            <strong>E-2 Treaty Investor Visa</strong> – For entrepreneurs from specific countries who invest a substantial
+            amount in a U.S. business. Mexico qualifies; most Central American countries do not.
+            <br />
+            <a href="https://www.uscis.gov/working-in-the-united-states/temporary-workers/e-2-treaty-investors" target="_blank" rel="noopener noreferrer">USCIS – E-2 Treaty Investors</a>
+          </li>
+          <li>
+            <strong>L-1 Visa</strong> – For business owners who already run a company abroad and want to open a U.S.
+            branch.
+            <br />
+            <a href="https://www.uscis.gov/working-in-the-united-states/temporary-workers/l-1a-intracompany-transferee-executive-or-manager" target="_blank" rel="noopener noreferrer">USCIS – L-1 Visa</a>
+          </li>
+          <li>
+            <strong>O-1 Visa</strong> – For people with "extraordinary ability" (for example in technology, innovation, or
+            social impact). Some high-profile founders use this pathway.
+            <br />
+            <a href="https://www.uscis.gov/working-in-the-united-states/temporary-workers/o-1-nonimmigrant-visa" target="_blank" rel="noopener noreferrer">USCIS – O-1 Visa</a>
+          </li>
+        </ul>
+
+        <h2 class="section-title">4. Banking, Credit, and Anti-Discrimination Rules</h2>
+        <p>
+          Under federal law, many banks can accept foreign passports, ITINs, consular IDs (such as the Mexican matrícula
+          consular), and other documents to open accounts. This matters because Mexican and Central American immigrants
+          are disproportionately unbanked.
+        </p>
+        <p>
+          Immigrants applying for business loans or credit cards are also protected by consumer finance laws against
+          discrimination and unfair lending practices, although discrimination still happens in practice.
+        </p>
+        <p>
+          <strong>Key links:</strong>
+          <a href="https://www.fdic.gov/resources/consumers/consumer-news/2022-02.html" target="_blank" rel="noopener noreferrer">FDIC – Acceptable ID for Bank Accounts</a>
+          &middot;
+          <a href="https://www.consumerfinance.gov/about-us/blog/immigrants-and-money/" target="_blank" rel="noopener noreferrer">CFPB – Immigrants &amp; Money</a>
+        </p>
+
+        <h2 class="section-title">5. Licensing and Permits</h2>
+        <p>
+          Some professions (like real estate agents, nurses, or certain contractors) require a Social Security number or
+          legal status in many states. However, several states now allow undocumented or ITIN-only applicants to get local
+          business licenses.
+        </p>
+        <p>
+          In California, <strong>AB 2184</strong> allows local governments to accept ITINs instead of SSNs for business
+          licenses. This is especially important for Mexican and Central American entrepreneurs who operate small
+          storefronts or food trucks.
+        </p>
+        <p>
+          <strong>Key link:</strong>
+          <a href="https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201720180AB2184" target="_blank" rel="noopener noreferrer">California AB 2184 – Business Licenses for All</a>
+        </p>
+
+        <h2 class="section-title">6. Laws That Create Barriers</h2>
+        <p>
+          Immigration laws passed in the 1990s still shape how safe immigrants feel interacting with government systems,
+          banks, and licensing offices. The most important is the 1996
+          <strong>IIRIRA (Illegal Immigration Reform and Immigrant Responsibility Act)</strong>.
+        </p>
+        <ul>
+          <li>Created 3-year and 10-year bars on re-entering the U.S. after “unlawful presence.”</li>
+          <li>Increased penalties and enforcement, contributing to fear of detection.</li>
+          <li>Discouraged many immigrants from applying for loans, licenses, or other programs connected to government records.</li>
+        </ul>
+        <p>
+          Another example is the <strong>Public Charge</strong> rule, which in some versions penalized immigrants for using
+          certain public benefits. Even when they did not apply, confusion and fear kept many from accessing
+          non–means-tested programs, including some business support.
+        </p>
+        <p>
+          <strong>Key links:</strong>
+          <a href="https://www.congress.gov/bill/104th-congress/house-bill/2202" target="_blank" rel="noopener noreferrer">IIRIRA summary</a>
+          &middot;
+          <a href="https://www.uscis.gov/green-card/green-card-processes-and-procedures/public-charge" target="_blank" rel="noopener noreferrer">USCIS – Public Charge</a>
+        </p>
+
+        <h2 class="section-title">7. Policies and Programs That Support Entrepreneurs</h2>
+        <p>
+          Some state and federal initiatives try to expand access for immigrant entrepreneurs:
+        </p>
+        <ul>
+          <li>
+            <strong>State "Right to an ITIN" policies</strong> – States like California, New York, and Illinois allow ITINs
+            for business licenses, state tax filings, and some financing programs.
+          </li>
+          <li>
+            <strong>CDFIs (Community Development Financial Institutions)</strong> – Mission-driven lenders that focus on
+            underserved borrowers, including immigrants who lack traditional credit histories.
+          </li>
+        </ul>
+        <p>
+          <strong>Key link:</strong>
+          <a href="https://www.cdfifund.gov/programs-training/certification/cdfi" target="_blank" rel="noopener noreferrer">U.S. Treasury – CDFI List</a>
+        </p>
+
+        <p class="note-small">
+          This page is for educational purposes only and is not legal advice. Immigrant entrepreneurs should consult an
+          immigration or business attorney for individualized guidance.
+        </p>
+      </section>
+
+      <!-- VIDEO LIBRARY PAGE -->
+      <section data-page="videos">
+        <h1 class="page-heading">Video Library: Immigrant Entrepreneurship</h1>
+        <p class="page-subtitle">
+          Curated English and Spanish video resources on immigrant entrepreneurship, barriers, legal rights, and
+          step-by-step business guidance. These can be used as class materials or community-facing tools.
+        </p>
+
+        <h2 class="section-title">Impact &amp; Economic Contributions</h2>
+        <ul class="resource-list">
+          <li>
+            <div class="resource-name">Immigrant Entrepreneurship: America’s Secret Weapon</div>
+            <p>
+              Overview of how immigrant-owned businesses drive innovation, job creation, and local economies.
+              <a href="https://www.youtube.com/watch?v=q1zVhdSe9Yo" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
+            </p>
+          </li>
+          <li>
+            <div class="resource-name">How Immigrants Influence the U.S. Economy?</div>
+            <p>
+              Explains the broader economic impact of immigrants, including entrepreneurship and small business formation.
+              <a href="https://www.youtube.com/watch?v=f5lutrrJjy4" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
+            </p>
+          </li>
+        </ul>
+
+        <h2 class="section-title">Barriers &amp; Challenges</h2>
+        <ul class="resource-list">
+          <li>
+            <div class="resource-name">Immigrant Entrepreneurs Driving Small Business in the U.S.</div>
+            <p>
+              Highlights both contributions and obstacles, including immigration status and access to capital.
+              <a href="https://www.youtube.com/watch?v=Hclg3fbWaxI" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
+            </p>
+          </li>
+          <li>
+            <div class="resource-name">Why Do Immigrant Entrepreneurs Have to Work Harder to be Accepted?</div>
+            <p>
+              Discusses bias, stereotypes, and social barriers facing immigrant founders.
+              <a href="https://www.youtube.com/watch?v=uwjjnGZ1Q54" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
+            </p>
+          </li>
+          <li>
+            <div class="resource-name">Navigating Entrepreneurship: Immigrant Entrepreneurs in Fresno</div>
+            <p>
+              Local case study featuring immigrant business owners, their stories, and support networks.
+              <a href="https://www.youtube.com/watch?v=7eXSoymhAHU" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
+            </p>
+          </li>
+        </ul>
+
+        <h2 class="section-title">Legal Rights &amp; Immigration Pathways</h2>
+        <ul class="resource-list">
+          <li>
+            <div class="resource-name">Rights of Immigrant Business Owners: Protecting Yourself and Your Employees</div>
+            <p>
+              Covers worker rights, compliance, and how immigrant-owned businesses can protect themselves legally.
+              <a href="https://www.youtube.com/watch?v=nFwHZChnRGs" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
+            </p>
+          </li>
+          <li>
+            <div class="resource-name">Moving to the U.S. as an Immigrant Entrepreneur</div>
+            <p>
+              Explains possible visa and immigration pathways for founders who want to start a business in the U.S.
+              <a href="https://www.youtube.com/watch?v=J2dz0ntj7YE" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
+            </p>
+          </li>
+          <li>
+            <div class="resource-name">Residencia USA para Emprendedores (EB2 NIW)</div>
+            <p>
+              Spanish-language explanation of investor and entrepreneur visa options.
+              <a href="https://www.youtube.com/watch?v=j3ndYOS8Gxg" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+            </p>
+          </li>
+        </ul>
+
+        <h2 class="section-title">How to Start a Business (English &amp; Spanish)</h2>
+        <ul class="resource-list">
+          <li>
+            <div class="resource-name">ImmigrantBizHub – Entrepreneurship Curriculum for Undocumented Immigrants</div>
+            <p>
+              Practical training series tailored specifically to undocumented entrepreneurs.
+              <a href="https://www.youtube.com/watch?v=mwkhd74ce6s" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
+            </p>
+          </li>
+          <li>
+            <div class="resource-name">¡5 tips para iniciar NEGOCIOS EN USA para inmigrantes!</div>
+            <p>
+              Spanish video offering step-by-step tips for starting a business in the U.S.
+              <a href="https://www.youtube.com/watch?v=dwqzt49heFc" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+            </p>
+          </li>
+          <li>
+            <div class="resource-name">Cómo Crear tu Empresa en EE.UU. Siendo Inmigrante Indocumentado</div>
+            <p>
+              Spanish-language guide for undocumented immigrants on how to legally structure a business.
+              <a href="https://www.youtube.com/watch?v=E1mMNs_LuXs" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+            </p>
+          </li>
+          <li>
+            <div class="resource-name">Cómo iniciar un negocio en los Estados Unidos, DEBES …</div>
+            <p>
+              Seminar-style overview in Spanish of requirements and steps to launch a business.
+              <a href="https://www.youtube.com/watch?v=_mgZNNKiLU" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+            </p>
+          </li>
+        </ul>
+
+        <h2 class="section-title">Real Stories &amp; Support</h2>
+        <ul class="resource-list">
+          <li>
+            <div class="resource-name">“I am an Immigrant Entrepreneur” Video Series</div>
+            <p>
+              Playlist of immigrant entrepreneurs sharing their journeys, challenges, and community impact (multiple
+              languages).
+              <a href="https://www.youtube.com/playlist?list=PLyJ6rqxsv5aV1ejr_HWmLlqAZ75kYJuwn" target="_blank" rel="noopener noreferrer">Watch the playlist</a>
+            </p>
+          </li>
+        </ul>
+
+        <p class="note-small">
+          These videos are external resources. Always evaluate who created them (community organization, government, law
+          firm, etc.) and how their perspective aligns with immigrant rights and racial justice.
+        </p>
       </section>
     </main>
 
     <footer>
       <p>
-        ETHN Immigration Project · Mexican Immigrant Entrepreneurship · Created
-        as a student project. This site is for educational purposes only and is
-        not legal or financial advice.
+        ETHN 120 · Immigration in the U.S. · Made by Brenda Alarcon · This website is a student project for educational
+        purposes and does not provide legal or financial advice.
       </p>
     </footer>
+
+    <script>
+      // Simple client-side router so each link shows a separate page
+      (function () {
+        const sections = document.querySelectorAll("section[data-page]");
+
+        function showPage(page) {
+          sections.forEach((sec) => {
+            const isActive = sec.getAttribute("data-page") === page;
+            sec.classList.toggle("active", isActive);
+          });
+        }
+
+        // Initial page based on hash, default to overview
+        const initial = window.location.hash.replace("#", "") || "overview";
+        showPage(initial);
+
+        // Handle clicks on nav links
+        document.querySelectorAll("[data-page-link]").forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const page = this.getAttribute("data-page-link");
+            showPage(page);
+            // Update URL hash without reloading
+            history.replaceState(null, "", "#" + page);
+          });
+        });
+      })();
+    </script>
   </body>
 </html>
